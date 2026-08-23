@@ -632,7 +632,6 @@ function crearDestellosPagina() {
     ? footer.offsetTop + footer.offsetHeight
     : document.documentElement.clientHeight;
 
-  capa.style.height = `${altoPagina}px`;
 
   capa.innerHTML = "";
 
@@ -775,12 +774,26 @@ function cerrarModal() {
 }
 
 categoryButtons.forEach(btn => {
+
   btn.addEventListener("click", () => {
+
     categoryButtons.forEach(b => b.classList.remove("active"));
+
     btn.classList.add("active");
+
     renderCategoria(btn.dataset.category);
-    window.scrollTo({ top: document.querySelector(".category-nav").offsetTop - 8, behavior: "smooth" });
+
+    requestAnimationFrame(() => {
+      crearDestellosPagina();
+    });
+
+    window.scrollTo({
+      top: document.querySelector(".category-nav").offsetTop - 8,
+      behavior: "smooth"
+    });
+
   });
+
 });
 
 menuContent.addEventListener("click", e => {
