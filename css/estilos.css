@@ -295,19 +295,25 @@ main {
   margin: 0 0 18px;
 }
 
-.section-heading h2 {
-  font:
-    500
-    2rem
-    var(--title);
+/* =====================================================
+   TÍTULOS DE LAS SECCIONES
+===================================================== */
 
-  letter-spacing: .07em;
+.section-heading h2 {
+  font-family: var(--title);
+  font-weight: 500;
+
+  font-size: clamp(1.55rem, 6vw, 2rem);
+
+  letter-spacing: .06em;
 
   margin: 0;
 
   color: #72504b;
 
   text-transform: uppercase;
+
+  white-space: nowrap;
 }
 
 .section-heading p {
